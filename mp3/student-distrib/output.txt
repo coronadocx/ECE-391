@@ -1,0 +1,47 @@
+gcc  -nostdinc -g  -c -o boot.o boot.S
+gcc  -nostdinc -g  -c -o linkage.o linkage.S
+gcc  -nostdinc -g  -c -o x86_desc.o x86_desc.S
+gcc -Wall -fno-builtin -fno-stack-protector -nostdlib -nostdinc -g  -c -o filesystem.o filesystem.c
+In file included from filesystem.h:43,
+                 from filesystem.c:2:
+paging.h: In function ‘rtc_read’:
+paging.h:41: error: storage class specified for parameter ‘pe_t’
+paging.h:43: error: storage class specified for parameter ‘paging_initialize’
+paging.h:44: error: storage class specified for parameter ‘paging_change_process’
+In file included from filesystem.c:2:
+filesystem.h:52: error: storage class specified for parameter ‘dentry_t’
+filesystem.h:56: error: storage class specified for parameter ‘set_mod_start’
+filesystem.h:59: error: storage class specified for parameter ‘fs_open’
+filesystem.h:62: error: storage class specified for parameter ‘fs_close’
+filesystem.h:65: error: storage class specified for parameter ‘fs_read’
+filesystem.h:68: error: storage class specified for parameter ‘fs_write’
+filesystem.h:71: error: expected declaration specifiers or ‘...’ before ‘dentry_t’
+filesystem.h:71: error: storage class specified for parameter ‘read_dentry_by_name’
+filesystem.h:74: error: expected declaration specifiers or ‘...’ before ‘dentry_t’
+filesystem.h:74: error: storage class specified for parameter ‘read_dentry_by_index’
+filesystem.h:77: error: storage class specified for parameter ‘read_data’
+filesystem.h:80: error: storage class specified for parameter ‘dir_read’
+filesystem.h:82: error: storage class specified for parameter ‘get_filesize’
+filesystem.h:85: error: storage class specified for parameter ‘dir_close’
+filesystem.c:6: error: storage class specified for parameter ‘dir_entries’
+filesystem.c:8: error: storage class specified for parameter ‘num_inodes’
+filesystem.c:10: error: storage class specified for parameter ‘num_dblocks’
+filesystem.c:12: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘a’
+filesystem.c:13: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘b’
+filesystem.c:27: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:41: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:57: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:71: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:97: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:109: error: expected declaration specifiers before ‘;’ token
+filesystem.c:119: error: expected declaration specifiers or ‘...’ before ‘dentry_t’
+filesystem.c:119: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:192: error: expected declaration specifiers or ‘...’ before ‘dentry_t’
+filesystem.c:192: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:239: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:418: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:465: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:494: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+filesystem.c:497: error: old-style parameter declarations in prototyped function definition
+filesystem.c:497: error: expected ‘{’ at end of input
+make: *** [filesystem.o] Error 1
