@@ -1,1 +1,1 @@
-# ECE-391
+# ECE-391 - Computer Systems Engineering
